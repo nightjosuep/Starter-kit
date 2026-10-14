@@ -3,27 +3,89 @@
   Hecho para probar si la carga del código funciona correctamente.
 */
 #include <Arduino.h>
-
-// La mayoría de las placas ESP32 tienen el LED interno en el GPIO 2
-const int LED_PIN = 2; 
+ 
+const int ledizqarriba= 18;
+const int lederecarriba = 19;
+const int ledizqabajo = 21;
+const int lederecabajo = 22;
 
 void setup() {
-  // Inicializa el puerto serie para ver mensajes en el monitor
-  Serial.begin(115200);
-  Serial.println("--- ESP32 Listo para la prueba de parpadeo ---");
-  
-  // Configura el pin del LED como salida
-  pinMode(LED_PIN, OUTPUT);
+  pinMode(ledizqarriba, OUTPUT);
+  pinMode(lederecarriba, OUTPUT);
+  pinMode(ledizqabajo, OUTPUT);
+  pinMode(lederecabajo, OUTPUT);
 }
 
 void loop() {
-  // Enciende el LED
-  digitalWrite(LED_PIN, HIGH);
-  Serial.println("LED Encendido (HIGH)");
-  delay(500); // Espera medio segundo
+  //orden normal 
+  digitalWrite(ledizqarriba, HIGH);
+  delay(500);
+  digitalWrite(ledizqarriba, LOW);
+  delay(200);
 
-  // Apaga el LED
-  digitalWrite(LED_PIN, LOW);
-  Serial.println("LED Apagado (LOW)");
-  delay(500); // Espera medio segundo
+  digitalWrite(lederecarriba, HIGH);
+  delay(500);
+  digitalWrite(lederecarriba, LOW);
+  delay(200);
+
+  digitalWrite(ledizqabajo, HIGH);
+  delay(500);
+  digitalWrite(ledizqabajo, LOW);
+  delay(200);
+
+  digitalWrite(lederecabajo, HIGH);
+  delay(500);
+  digitalWrite(lederecabajo, LOW);
+  delay(200);
+// orden otro 2 
+  digitalWrite(ledizqarriba, HIGH);
+  delay(500);
+    digitalWrite(lederecarriba, HIGH);
+  delay(500);
+  digitalWrite(ledizqarriba, LOW);
+  delay(200);
+    digitalWrite(lederecarriba, LOW);
+  delay(200);
+  digitalWrite(ledizqabajo, HIGH);
+  delay(500);
+    digitalWrite(lederecabajo, HIGH);
+  delay(500);
+  digitalWrite(ledizqabajo, LOW);
+  delay(200);
+    digitalWrite(lederecabajo, LOW);
+  delay(200);
+//orden otro 1
+  digitalWrite(ledizqarriba, HIGH);
+  delay(500);
+  digitalWrite(ledizqabajo, HIGH);
+  delay(500);
+  digitalWrite(ledizqarriba, LOW);
+  delay(200);
+  digitalWrite(ledizqabajo, LOW);
+  delay(200);
+  digitalWrite(lederecarriba, HIGH);
+  delay(500);
+  digitalWrite(lederecabajo, HIGH);
+  delay(500);
+  digitalWrite(lederecarriba, LOW);
+  delay(200);
+  digitalWrite(lederecabajo, LOW);
+  delay(200);
+//el ultimo 
+  digitalWrite(ledizqarriba, HIGH);
+  delay(500);
+  digitalWrite(lederecarriba, HIGH);
+  delay(500);
+  digitalWrite(ledizqabajo, HIGH);
+  delay(500);
+  digitalWrite(lederecabajo, HIGH);
+  delay(500);
+  digitalWrite(ledizqarriba, LOW);
+  delay(200);
+  digitalWrite(lederecarriba, LOW);
+  delay(200);
+  digitalWrite(ledizqabajo, LOW);
+  delay(200);
+  digitalWrite(lederecabajo, LOW);
+  delay(200);
 }
